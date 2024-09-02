@@ -1,58 +1,61 @@
-// baseNode.js
+// // baseNode.js
 
-import { useState } from 'react';
-import { Handle, Position } from 'reactflow';
-import BaseModel from './BaseModel';
-import CustomHandle from '../utils/custom-handle';
+// import { useState } from 'react';
+// import { Handle, Position } from 'reactflow';
+// import BaseModel from './BaseModel';
+// import CustomHandle from '../utils/custom-handle';
+// import Input from '../utils/input';
 
-const BaseNode = ({ id, data, nodeType, handleNameChange, handleTypeChange, handlePosition, icon }) => {
-  const [variable,setVariable]=useState(4);
-  const [currName, setCurrName] = useState(data?.name || id?.replace(`${nodeType}-`, `${nodeType}_`));
-  const [type, setType] = useState(data.type || 'Text');
+// const BaseNode = ({ id, data, nodeType, handleNameChange, handleTypeChange, icon }) => {
 
-  const onNameChange = (e) => {
-    setCurrName(e.target.value);
-    handleNameChange && handleNameChange(e);
-  };
+//   const [variable,setVariable]=useState();
+//   const [currName, setCurrName] = useState(data?.name || id?.replace(`${nodeType}-`, `${nodeType}_`));
+//   const [type, setType] = useState(data.type || 'Text');
 
-  const onTypeChange = (e) => {
-    setType(e.target.value);
-    handleTypeChange && handleTypeChange(e);
-  };
+//   const onNameChange = (e) => {
+//     setCurrName(e.target.value);
+//     handleNameChange && handleNameChange(e);
+//   };
 
-  return (
-    <BaseModel name={nodeType} icon={icon}>
+//   const onTypeChange = (e) => {
+//     setType(e.target.value);
+//     handleTypeChange && handleTypeChange(e);
+//   };
 
-      {variable && nodeType==="Text" &&   [...Array(variable-1)].map((v,i)=>(
-        <CustomHandle
-          key={i}
-          type="target"
-          position={Position.Left}
-          id={`${id}-prompt-${i}`}
-          style={{ top: `${20*(i+1)}%` }}
-        />
-      ))}
+//   return (
+//     <BaseModel name={nodeType} icon={icon}>
 
-      <CustomHandle
-        type="target"
-        position={Position.Left}
-        id={`${id}-prompt`}
-        style={{ top: '50%' }}
-      />  
-      <div className='p-4'>
-        <label htmlFor="text" className='flex flex-col font-medium'>LLM</label>
-        <input type="text" className='border-2 rounded-md focus:outline-none border-neutral-400 px-1 h-10'/>
-      </div>
-      <div className='p-4'>
-        <span>This is a LLM.</span>
-      </div>
-      <CustomHandle
-        type="source"
-        position={Position.Right}
-        id={`${id}-response`}
-      />
-    </BaseModel>
-  );
-};
+//       {variable && nodeType==="Text" &&   [...Array(variable-1)].map((v,i)=>(
+//         <CustomHandle
+//           key={i}
+//           type="target"
+//           position={Position.Left}
+//           id={`${id}-prompt-${i+1}`}
+//           style={{ top: `${20*(i+1)}%` }}
+//         />
+//       ))}
 
-export default BaseNode;
+//       <CustomHandle
+//         type="target"
+//         position={Position.Left}
+//         id={`${id}-prompt`}
+//         style={{ top: '50%' }}
+//       />  
+//       <div className='p-4'>
+//         <Input label='Name' className='rounded-full'/>
+//         {/* <label htmlFor="text" className='flex flex-col font-medium'>LLM</label>
+//         <input type="text" className='border-2 rounded-md focus:outline-none border-neutral-400 px-1 h-10'/> */}
+//       </div>
+//       <div className='p-4'>
+//         <span>This is a LLM.</span>
+//       </div>
+//       <CustomHandle
+//         type="source"
+//         position={Position.Right}
+//         id={`${id}-response`}
+//       />
+//     </BaseModel>
+//   );
+// };
+
+// export default BaseNode;

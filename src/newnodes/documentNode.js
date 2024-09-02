@@ -1,12 +1,31 @@
 //documentNode.js;
 
+import CustomHandle from "../utils/custom-handle";
+import Input from "../utils/input";
+import BaseModel from "./BaseModel";
 import BaseNode from "./baseNode";
 import { IoIosDocument } from "react-icons/io";
 export const DocumentNode = ({ id, data }) => {
   return (
-    <BaseNode id='1' data={data}
+    <BaseModel name={id} data={data}
        
       icon={<IoIosDocument />}
-      nodeType="Document" handlePosition="source" />
+    >
+      <div className="p-4">
+        <Input label="Name" type="text" className="" placeholder="About Document"/>
+      </div>
+      <CustomHandle
+        type="source"
+        position="right"
+        id={`${id}-response`}
+      />
+      <CustomHandle
+        type="target"
+        position="left"
+        id={`${id}-prompt`}
+        style={{ top: "50%" }}
+      />
+      
+    </BaseModel>
   );
 };

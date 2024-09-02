@@ -1,9 +1,10 @@
 //audioNode.js;
 
+import BaseModel from "./BaseModel";
 import BaseNode from "./baseNode";
 
 export const AudioNode = ({ id, data }) => {
   return (
-    <BaseNode id={id} data={data} nodeType="Audio" handlePosition="source" />
+    <BaseModel name={id} data={data}  />
   );
 };
