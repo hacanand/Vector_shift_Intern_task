@@ -3,10 +3,10 @@
 import CustomHandle from "../utils/custom-handle";
 import Input from "../utils/input";
 import BaseModel from "./BaseModel";
-import BaseNode from "./baseNode";
+import BaseNode from "./baseNode1";
 import { FaChartArea } from "react-icons/fa";
 
-export const ChartNode = ({ data ,id}) => {
+export const ChartNode = ({ data, id }) => {
   return (
     <BaseModel name={id} icon={<FaChartArea />}>
       <div className="p-4">

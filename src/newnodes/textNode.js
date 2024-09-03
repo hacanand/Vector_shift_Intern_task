@@ -2,7 +2,6 @@ import { Position } from "reactflow";
 import CustomHandle from "../utils/custom-handle";
 import Input from "../utils/input";
 import BaseModel from "./BaseModel";
-import BaseNode from "./baseNode";
 import { IoDocumentText } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";

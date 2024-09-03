@@ -60,7 +60,8 @@ export const PipelineUI = () => {
       let nodeData = { id: nodeID, nodeType: `${type}` };
       return nodeData;
     }
-
+  // console.log("nodes", nodes);
+  // console.log("edges", edges);
     const onDrop = useCallback(
         (event) => {
           event.preventDefault();
