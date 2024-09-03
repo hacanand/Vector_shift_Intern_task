@@ -18,6 +18,7 @@ import { ChartNode } from './newnodes/chartNode';
 
 
 import 'reactflow/dist/style.css';
+import CustomEdge from './utils/custom-edge';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -42,7 +43,9 @@ const selector = (state) => ({
   onEdgesChange: state.onEdgesChange,
   onConnect: state.onConnect,
 });
-
+const edgeTypes = {
+  customEdge:CustomEdge
+}
 export const PipelineUI = () => {
     const reactFlowWrapper = useRef(null);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
@@ -62,6 +65,7 @@ export const PipelineUI = () => {
     }
   // console.log("nodes", nodes);
   // console.log("edges", edges);
+  
     const onDrop = useCallback(
         (event) => {
           event.preventDefault();
@@ -106,6 +110,7 @@ export const PipelineUI = () => {
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
+                edgeTypes={edgeTypes}
                 onNodesChange={onNodesChange}
                 onEdgesChange={onEdgesChange}
                 onConnect={onConnect}

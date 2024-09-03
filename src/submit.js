@@ -10,8 +10,8 @@ const selectoe = (state) => ({
 
 export const SubmitButton = () => {
     const { nodes, edges } = useStore(selectoe, shallow);
-    console.log("edges", edges);
-    console.log("nodes", nodes);
+   // console.log("edges", edges);
+    //console.log("nodes", nodes);
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
