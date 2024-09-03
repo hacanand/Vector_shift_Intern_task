@@ -1,10 +1,10 @@
 import { Position } from "reactflow";
 import CustomHandle from "../utils/custom-handle";
-import Input from "../utils/input";
+// import Input from "../utils/input";
 import BaseModel from "./BaseModel";
 import { IoDocumentText } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 export const TextNode = ({ id}) => {
   const [value, setValue] = useState("{{input}}");
   const [variable, setVariable] = useState(1);
@@ -29,11 +29,8 @@ export const TextNode = ({ id}) => {
            counts[content] = 1;
          }
        }
-       if (Object.keys(counts).length > 6) {
-         toast.error("You can only have 6 variables in a single node");
-       } else {
-         setVariable(Object.keys(counts).length);
-       }
+     
+       setVariable(Object.keys(counts).length);
      }
       checkString();
    }, [value]);

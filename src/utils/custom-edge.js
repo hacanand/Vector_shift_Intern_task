@@ -18,7 +18,7 @@ const CustomEdge = (props) => {
   } = props;
   // console.log(props.id)
   const { setEdges } = useReactFlow();
-  const [edgePath, labelX, labelY] = getBezierPath({
+  const [  labelX, labelY] = getBezierPath({
     sourceX,
     sourceY,
     targetX,
