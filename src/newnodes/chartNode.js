@@ -3,7 +3,7 @@
 import CustomHandle from "../utils/custom-handle";
 import Input from "../utils/input";
 import BaseModel from "./BaseModel";
-import BaseNode from "./baseNode1";
+// import BaseNode from "./baseNode1";
 import { FaChartArea } from "react-icons/fa";
 
 export const ChartNode = ({ data, id }) => {

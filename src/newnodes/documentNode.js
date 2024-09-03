@@ -3,7 +3,7 @@
 import CustomHandle from "../utils/custom-handle";
 import Input from "../utils/input";
 import BaseModel from "./BaseModel";
-import BaseNode from "./baseNode1";
+// import BaseNode from "./baseNode1";
 import { IoIosDocument } from "react-icons/io";
 export const DocumentNode = ({ id, data }) => {
   return (
