@@ -18,7 +18,7 @@ const CustomEdge = (props) => {
   } = props;
   // console.log(props.id)
   const { setEdges } = useReactFlow();
-  const [  labelX, labelY] = getBezierPath({
+  const [edgePath,labelX, labelY] = getBezierPath({
     sourceX,
     sourceY,
     targetX,
@@ -34,7 +34,6 @@ const CustomEdge = (props) => {
     <>
       <BezierEdge {...props} />
       <EdgeLabelRenderer>
-         
           <RxCross2
             style={{
               position: " absolute",
