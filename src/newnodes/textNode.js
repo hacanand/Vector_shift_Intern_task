@@ -8,14 +8,16 @@ import { useEffect, useRef, useState } from "react";
 export const TextNode = ({ id}) => {
   const [value, setValue] = useState("{{input}}");
   const [variable, setVariable] = useState(1);
-   const textareaRef = useRef(null);
-  // console.log(variable);
+  const textareaRef = useRef(null);
+  
+  console.log(id);
    useEffect(() => {
      if (textareaRef.current) {
        textareaRef.current.style.height = "auto";
        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
      }
      // check in textareaRef how many number  of "{{input }}" then  setVariable
+    //  setValue(textareaRef.current.value);
      function checkString() {
        const regex = /\{\{\s*(.+?)\s*\}\}/g;
        let match;
@@ -50,11 +52,11 @@ export const TextNode = ({ id}) => {
           ref={textareaRef}
           className="w-full overflow-hidden p-2 border rounded-md resize-none focus:outline-none border-neutral-400 min-h-32"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+         onChange={(e) => setValue(e.target.value)}
         />
       </div>
 
-      {variable &&[...Array(variable)].map((v, i) => (
+      {variable &&[...Array(variable)].map((_, i) => (
       <CustomHandle
         key={i}
         type="target"
